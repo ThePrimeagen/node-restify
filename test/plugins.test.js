@@ -1040,7 +1040,7 @@ test('audit logger timer test', function (t) {
     // Dirty hack to capture the log record using a ring buffer.
     var ringbuffer = new bunyan.RingBuffer({ limit: 1 });
 
-    SERVER.once('after', restify.auditLogger({
+    SERVER.once('after', restify.after.auditLogger({
         log: bunyan.createLogger({
             name: 'audit',
             streams:[ {
@@ -1087,7 +1087,7 @@ test('audit logger anonymous timer test', function (t) {
     // Dirty hack to capture the log record using a ring buffer.
     var ringbuffer = new bunyan.RingBuffer({ limit: 1 });
 
-    SERVER.once('after', restify.auditLogger({
+    SERVER.once('after', restify.after.auditLogger({
         log: bunyan.createLogger({
             name: 'audit',
             streams:[ {
@@ -1139,7 +1139,7 @@ test('GH-812 audit logger has query params string', function (t) {
     // Dirty hack to capture the log record using a ring buffer.
     var ringbuffer = new bunyan.RingBuffer({ limit: 1 });
 
-    SERVER.once('after', restify.auditLogger({
+    SERVER.once('after', restify.after.auditLogger({
         log: bunyan.createLogger({
             name: 'audit',
             streams:[ {
@@ -1172,7 +1172,7 @@ test('GH-812 audit logger has query params obj', function (t) {
     // Dirty hack to capture the log record using a ring buffer.
     var ringbuffer = new bunyan.RingBuffer({ limit: 1 });
 
-    SERVER.once('after', restify.auditLogger({
+    SERVER.once('after', restify.after.auditLogger({
         log: bunyan.createLogger({
             name: 'audit',
             streams:[ {
